@@ -1,0 +1,13 @@
+Fonts used in this design:
+
+Font: Roboto
+Author: Christian Robertson
+Url: https://fonts.google.com/specimen/Roboto
+
+Font: Londrina Solid
+Author: Marcelo Magalhães
+Url: https://fonts.google.com/specimen/Londrina+Solid
+
+Font: Bowlby One
+Author: Vernon Adams
+Url: https://fonts.google.com/specimen/Bowlby+One

@@ -1,0 +1,31 @@
+.box-line
+{
+    height: 7px;
+    width:auto;
+    background-color: black;
+}
+
+.icons
+{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+
+.images-align
+{
+    height: 30px;
+    width: 30px;
+    padding: 5px 10px;
+}
+
+.footer-bg
+{
+    padding : 2px;
+    background-color:bisque;
+    /* display : flex;
+    flex-wrap: wrap; */
+
+}
