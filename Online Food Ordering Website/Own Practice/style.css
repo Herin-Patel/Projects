@@ -1,0 +1,410 @@
+/*   
+    Author : Herin Patel
+    Theme : Restaurant Food Order
+*/
+
+
+/* CSS For All parts */
+*
+{
+    margin : 0 0;
+    padding : 0 0;
+}
+.container
+{
+    width : 80%;
+    margin : 0% auto;
+    padding : 1%;
+}
+
+.img-responsive
+{
+    width : 100%;
+}
+
+.img-curve
+{
+    border-radius : 15px; 
+}
+
+.text-right
+{
+    text-align : right;
+}
+
+.text-center
+{
+    text-align : center;
+}
+
+.text-left
+{
+    text-align : left;
+}
+
+.clearfix
+{
+    clear : both;
+    float : none;
+}
+
+
+.btn
+{
+    width: 9%;
+    border : none;
+    padding : 1.2%;
+    font-family: 'Kanit', sans-serif;
+    font-size : 1rem;
+    border-radius : 30px;
+    text-decoration: none;
+
+}
+
+.btn-primary
+{
+    background-color : #ff7675;
+    color : white;
+    cursor : pointer;
+}
+
+.btn-primary:hover
+{
+    background-color: #d63031;
+}
+
+h2
+{
+    color : #636e72;
+    font-size : 2rem;
+    margin-bottom : 2%;
+}
+
+h3
+{
+    font-size : 1.5rem;
+}
+
+h4
+{
+    font-size : 1rem;
+}
+
+.float-container
+{
+    position : relative;
+}
+
+.float-text
+{
+    position : absolute;
+    bottom : 50px;
+    left : 40%;
+}
+
+.text-white
+{
+    font-family: 'Kanit', sans-serif;
+    color : white;
+    text-decoration: none;
+}
+
+
+
+
+/* CSS For Ttile */
+.title-box
+{
+    font-family : 'Josefin Sans', sans-serif;
+    font-size : 3rem;
+    margin-top: 3%;
+}
+
+
+
+/* CSS For Navbar section */
+.logo
+{
+    width :  10%;
+    float : left;
+}
+
+.menu
+{
+    line-height : 130px;
+}
+
+.menu-box 
+{
+    font-size: 2rem;
+    font-family : 'Josefin Sans', sans-serif;
+}
+
+.menu ul
+{
+    list-style-type: none;
+}
+
+.menu ul li
+{
+    display : inline;
+    padding : 1%;
+    font-weight: bold;
+
+}
+
+.menu ul li a
+{
+    color : #ff7675;
+    text-decoration: none;
+}
+
+.menu ul li a:hover
+{
+    color : #d63031;
+}
+
+
+
+
+/* CSS for Food Search Section */
+
+.food-search
+{
+    background-image: url(images/bg.jpg);
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding : 10% 0%;
+}
+
+.food-search input[ type = "search"]
+{
+    border-radius: 30px;;
+    width : 60%;
+    padding : 1%;
+    font-size : 1rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+
+
+/* CSS for Categories */
+.categories
+{
+    padding : 4% 0%;
+}
+
+.box-3
+{
+
+    width : 28%;
+    float : left;
+    margin : 2%
+}
+
+
+
+/* CSS For Explore Section */
+
+.food-menu
+{
+    background-color: blanchedalmond;
+    padding : 4%;
+
+}
+.food-menu-box
+{
+    width : 43%;
+    margin : 1%;
+    padding : 2%;
+    float : left;
+    background-color: white;
+    border-radius: 15px;
+    font-family: 'Kanit', sans-serif;     
+}
+
+.img-responsive-1
+{
+    width : 130%;
+}
+
+.food-menu-img
+{
+    width : 20%;
+    float : left;
+}
+
+.food-menu-desc
+{
+    width : 70%;
+    float : left;
+    margin-left : 8%;
+}
+
+.food-price
+{
+    font-size : 1.1rem;
+    margin : 0% 0;
+}
+
+.food-details
+{
+
+    font-size: 0.9rem;
+    padding: 1%;
+    color : #b2bec3;
+}
+
+
+
+/* CSS for Social Section */
+
+.list-type
+{
+    text-decoration: none;
+    list-style: none;
+}
+
+.inline-type
+{
+    text-decoration: none;
+    display: inline;
+    padding : 1%; 
+}
+
+
+
+
+
+/* Categories page CSS */
+
+/* Title box */
+.ctg-title
+{
+    color : #636e72;
+}
+
+
+
+
+
+/* CSS for Order page */
+
+.field-set
+{
+    border : 4px solid black;
+    border-radius : 22px;
+    padding : 15px;
+}
+
+.leg-title
+{
+    font-size : 1.8rem;
+    font-family : 'Josefin Sans', sans-serif;
+}
+
+
+.food-title
+{
+    font-size : 1.5rem;
+    font-family: 'Kanit', sans-serif; 
+}
+
+.food-price-1
+{
+    font-family: 'Kanit', sans-serif; 
+    font-size : 1.5rem;
+    margin : 0% 0;
+}
+
+#font-style
+{
+    font-family : 'Josefin Sans', sans-serif;
+}
+
+.input-responsive
+{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+
+
+
+/* CSS For Mobile size or smaller screen */
+
+@media only screen and ( max-width : 768px )
+{
+    .logo
+    {
+        width: 80%;
+        float: none;
+        margin: 1% auto;
+    }
+
+    .menu ul
+    {
+        text-align: center;
+    }
+
+    .food-search input[type="search"]
+    {
+        width: 90%;
+        padding: 2%;
+        margin-bottom: 3%;
+    }
+
+    .btn
+    {
+        width: 91%;
+        padding: 2%;
+    }
+
+    .food-search
+    {
+        padding: 10% 0;
+    }
+
+    .categories
+    {
+        padding: 20% 0;
+    }
+    h2{
+        margin-bottom: 10%;
+    }
+    .box-3
+    {
+        width: 100%;
+        margin: 4% auto;
+    }
+
+    .food-menu
+    {
+        padding: 20% 0;
+    }
+
+    .food-menu-box
+    {
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+
+    .social
+    {
+        padding: 5% 0;
+    }
+    .order
+    {
+        width: 100%;
+    }
+}
+
+
