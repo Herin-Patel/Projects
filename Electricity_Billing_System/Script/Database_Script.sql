@@ -38,3 +38,25 @@ CREATE TABLE IF NOT EXISTS meter_info (
 
 SELECT * FROM meter_info;
 
+CREATE TABLE IF NOT EXISTS tax (
+	cost_per_unit VARCHAR(20),
+    meter_rent VARCHAR(20),
+    service_charge VARCHAR(20),
+    service_tax VARCHAR(20),
+    swacch_bharat VARCHAR(20),
+    fixed_tax VARCHAR(20)
+);
+
+SELECT * FROM tax;
+
+INSERT INTO tax VALUES ('10', '45', '20', '58', '5', '18');
+
+CREATE TABLE IF NOT EXISTS bill (
+	meter_no VARCHAR(20),
+    month VARCHAR(20),
+    unit VARCHAR(20),
+    total_bill VARCHAR(20),
+    status VARCHAR(20)
+);
+
+SELECT * FROM bill;
