@@ -6,6 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.FocusListener;
+import java.awt.event.FocusEvent;
+import java.sql.ResultSet;
 
 public class SignUp extends JFrame implements ActionListener {
     Choice loginAs;
@@ -55,12 +58,34 @@ public class SignUp extends JFrame implements ActionListener {
         add(userText);
 
         JLabel name = new JLabel("Name");
-        name.setBounds(30,180,125,20);
+        name.setBounds(30, 180, 125, 20);
         add(name);
 
-        nameText = new TextField();
-        nameText.setBounds(170, 180,125,20);
+        nameText = new TextField("");
+        nameText.setBounds(170, 180, 125, 20);
         add(nameText);
+
+        meterText.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    Database myDB = new Database();
+                    ResultSet myResultSet = myDB.myStatement.executeQuery("SELECT * FROM SignUp WHERE meter_no='" + meterText.getText() + "';");
+
+                    if (myResultSet.next()) {
+                        nameText.setText(myResultSet.getString("name"));
+                    }
+                } catch (Exception expobj) {
+                    System.out.printf("Error in fetching data from SignUp table : %s\n", expobj.getMessage());
+                    expobj.printStackTrace();
+                }
+            }
+        });
 
         JLabel password = new JLabel("Password");
         password.setBounds(30, 220, 125, 20);
@@ -74,14 +99,15 @@ public class SignUp extends JFrame implements ActionListener {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 String user = loginAs.getSelectedItem();
-                if (user.equals("Customer")){
+                if (user.equals("Customer")) {
                     employerID.setVisible(false);
                     employerText.setVisible(false);
 
                     meterNo.setVisible(true);
                     meterText.setVisible(true);
-                }
-                else {
+
+                    nameText.setEditable(false);
+                } else {
                     employerID.setVisible(true);
                     employerText.setVisible(true);
 
@@ -94,7 +120,7 @@ public class SignUp extends JFrame implements ActionListener {
         createButton = new JButton("Create");
         createButton.setBackground(new Color(66, 127, 219));
         createButton.setForeground(Color.WHITE);
-        createButton.setBounds(50,285, 100, 25);
+        createButton.setBounds(50, 285, 100, 25);
         createButton.addActionListener(this);
         add(createButton);
 
@@ -106,22 +132,22 @@ public class SignUp extends JFrame implements ActionListener {
         add(backButton);
 
         ImageIcon signIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/boy.png"));
-        Image signIcon2 = signIcon.getImage().getScaledInstance(250,250, Image.SCALE_DEFAULT);
+        Image signIcon2 = signIcon.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
         ImageIcon signIcon3 = new ImageIcon(signIcon2);
         JLabel signLabel = new JLabel(signIcon3);
-        signLabel.setBounds(320,30,250,250);
+        signLabel.setBounds(320, 30, 250, 250);
         add(signLabel);
 
 
-        setSize(600, 388 );
+        setSize(600, 388);
         setLocation(500, 200);
         setLayout(null);
         setVisible(true);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
-        if(e.getSource()==createButton){
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == createButton) {
             // Back-end data stored in MySQL Database
 
             String userTypeData = loginAs.getSelectedItem();
@@ -133,20 +159,24 @@ public class SignUp extends JFrame implements ActionListener {
             try {
                 Database myDB = new Database();
                 String query = null;
-                query = "INSERT INTO SignUp VALUE ('" + meterData + "', '" + userNameData + "', '" + nameData + "', '" + passwordData + "', '" + userTypeData + "');";
+
+                if (userTypeData.equals("Admin")) {
+                    query = "INSERT INTO SignUp VALUE ('" + meterData + "', '" + userNameData + "', '" + nameData + "', '" + passwordData + "', '" + userTypeData + "');";
+                } else if (userTypeData.equals("Customer")) {
+                    query = "UPDATE SignUp SET username='" + userNameData + "', password='" + passwordData + "', usertype='" + userTypeData + "' WHERE meter_no='" + meterData + "';";
+                }
 
                 myDB.myStatement.executeUpdate(query);
 
                 JOptionPane.showMessageDialog(null, "Account Created Successfully");
                 setVisible(false);
                 new Login();
-            }
-            catch(Exception expobj){
+            } catch (Exception expobj) {
                 System.out.printf("Error in inserting data into database : %s\n", expobj.getMessage());
                 expobj.printStackTrace();
             }
 
-        }else if(e.getSource()==backButton){
+        } else if (e.getSource() == backButton) {
             setVisible(false);
             new Login();
         }

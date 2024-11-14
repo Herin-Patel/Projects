@@ -27,6 +27,10 @@ RENAME TO new_customer;
 
 SELECT * FROM new_customer;
 
+ALTER TABLE new_customer
+CHANGE COLUMN emai 
+email VARCHAR(30);
+
 CREATE TABLE IF NOT EXISTS meter_info (
 	meter_number VARCHAR(30),
     meter_location VARCHAR(30),
@@ -60,3 +64,7 @@ CREATE TABLE IF NOT EXISTS bill (
 );
 
 SELECT * FROM bill;
+
+UPDATE SignUp 
+SET username='hello12345', password='hello', usertype='Customer'
+WHERE meter_no=41795;

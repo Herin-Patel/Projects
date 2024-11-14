@@ -83,8 +83,9 @@ public class Login extends JFrame implements ActionListener {
 //                System.out.printf("Result : %s\n", resultSet.toString());
 
                 if (resultSet.next()) {
+                    String meterNo = resultSet.getString("meter_no");
                     setVisible(false);
-                    new main_class();
+                    new main_class(userType, meterNo);
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid Login Details");
                 }
