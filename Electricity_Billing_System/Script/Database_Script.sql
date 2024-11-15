@@ -68,3 +68,7 @@ SELECT * FROM bill;
 UPDATE SignUp 
 SET username='hello12345', password='hello', usertype='Customer'
 WHERE meter_no=41795;
+
+UPDATE bill
+SET status='Not Paid'
+WHERE meter_no=41795 AND month='July';

@@ -195,6 +195,10 @@ public class main_class extends JFrame implements ActionListener {
             new UpdateInformation(meter_pass);
         } else if (action.equals("Bill Details")) {
             new BillDetails(meter_pass);
+        }else if (action.equals("Pay Bill")) {
+            new PayBill(meter_pass);
+        } else if (action.equals("Generate Bill")) {
+            new GenerateBill(meter_pass);
         } else if (action.equals("Calculator")) {
             try {
                 Runtime.getRuntime().exec("calc.exe");
@@ -214,12 +218,6 @@ public class main_class extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null,accountType + " has logged out successfully.");
             new Login();
         }
-//        else if (action.equals("Pay Bill")) {
-////            new PayBill
-//        } else if (action.equals("Generate Bill")) {
-////            new GenerateBill
-//        }
-
     }
 
     public static void main(String[] args) {
