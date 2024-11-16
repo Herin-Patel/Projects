@@ -72,3 +72,18 @@ WHERE meter_no=41795;
 UPDATE bill
 SET status='Not Paid'
 WHERE meter_no=41795 AND month='July';
+
+
+USE Bill_System;
+SELECT * FROM SignUp;
+SELECT * FROM new_customer;
+SELECT * FROM meter_info;
+SELECT * FROM tax;
+SELECT * FROM bill;
+
+TRUNCATE TABLE SignUp;
+TRUNCATE TABLE new_customer;
+TRUNCATE TABLE meter_info;
+TRUNCATE TABLE bill;
+
+
